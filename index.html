@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julia | Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <a href="index.html" class="logo">Portfolio</a>
+      <nav>
+        <ul>
+          <li><a href="#top" class="active">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <section class="hero" id="hero">
+      <img src="profile.jpg" alt="Profile" class="profile-img" />
+      <div class="hero-content">
+        <h1 class="hero-greeting">hello!</h1>
+        <p class="hero-bio">
+          My name is Julia Corpuz. I recently graduated with a degree in Bachelor of Science in Information Technology with a strong passion for web and visual design.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Get in Touch</a>
+          <a href="Corpuz, Julia-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-text">
+        <p>I am passionate about the intersection of code and visual aesthetics, I bring digital concepts to life through clean graphic and web design. I enjoy turning bold, creative ideas into polished interfaces and impactful visuals, bringing technical precision and genuine enthusiasm to collaborative projects and new creative challenges.</p>
+        <p>Even though I graduated with a BS in Information Technology focusing on programming and coding, I taught myself design using free resources I found online. You might be wondering why I chose this course and why I want to pursue designing. The only reason is that I needed an outlet to express my creativity. While coding gave me the discipline and logic to build systems, design gave me the freedom to shape how people actually see and feel them. By combining my technical IT foundation like HTML, CSS, and programming logic—with self-taught visual design, I create experiences that are not only functional, but visually compelling and intuitive.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-subtitle">Feel free to reach out for project inquiries.</p>
+      
+      <div class="contact-container">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:jcliya20041@gmail.com" class="contact-value">jcliya20041@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <a href="tel:+639705540537" class="contact-value">+63 970 554 0537</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/julia-corpuz-b12122425" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+          <a href="https://github.com/yoimihya" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+          <a href="https://www.instagram.com/juuuiya/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+
+      if (href === '#top' || href.endsWith('#top')) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+        document.body.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (href.startsWith('#') && href !== '#') {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
